@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Mulish, Pixelify_Sans, Tangerine } from "next/font/google";
 import "./globals.css";
+import SmoothScrollProvider from "../components/SmoothScroll";
 
+
+const mulish = Mulish({ subsets: ["latin"] });
+const pixelify = Pixelify_Sans({ subsets: ["latin"] });
+const tangerine = Tangerine({
+  subsets: ["latin"],
+  weight: ["400", "700"]
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +35,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col text-[var(--foreground)]">
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
+      </body>
     </html>
   );
 }
