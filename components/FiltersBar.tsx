@@ -1,8 +1,15 @@
 "use client";
 
-export default function ProductFilters({ selected, setSelected }) {
+import { Dispatch, SetStateAction } from "react";
 
-  const toggleFilter = (value) => {
+interface ProductFiltersProps {
+  selected: string[];
+  setSelected: Dispatch<SetStateAction<string[]>>;
+}
+
+export default function ProductFilters({ selected, setSelected }: ProductFiltersProps) {
+
+  const toggleFilter = (value: string) => {
     setSelected((prev) =>
       prev.includes(value)
         ? prev.filter((v) => v !== value)

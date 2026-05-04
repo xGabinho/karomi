@@ -7,7 +7,7 @@ export const products = [
   },
   {
     id: 2,
-    category:"Relojes" ,
+    category:"Reloj" ,
     name: "Reloj para mujer",
     price: "$20.000",
   },

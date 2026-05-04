@@ -1,28 +1,9 @@
+// app/api/products/route.ts
+import { NextResponse } from "next/server";
+// Ajusta esta ruta dependiendo de dónde guardaste tu archivo product.ts
+import { products } from "@/data/products.ts"; 
+
 export async function GET() {
-  return Response.json([
-    {
-      id: 1,
-      name: "Camiseta básica",
-      price: 25000,
-      category: "Ropa"
-    },
-    {
-      id: 2,
-      name: "Audífonos",
-      price: 80000,
-      category: "Tecnología"
-    },
-    {
-      id: 3,
-      name: "Vaso térmico",
-      price: 30000,
-      category: "Hogar"
-    },
-    {
-      id: 4,
-      name: "Mouse gamer",
-      price: 120000,
-      category: "Tecnología"
-    }
-  ]);
+  // NextResponse.json() convierte tu array de productos en un JSON válido
+  return NextResponse.json(products);
 }

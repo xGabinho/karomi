@@ -86,7 +86,9 @@ export default function Home() {
             <div className="flex-1 h-px bg-gray-300"></div>
 
           </div>
-          <ProductList />
+          <div className="container mx-auto px-4">
+            <ProductList />
+          </div>
 
           <a href="/productos" className="flex items-center justify-center px-6 py-3 rounded-full bg-[var(--color-primary)] text-white font-medium hover:scale-105 transition-transform">
             Ver más productos
