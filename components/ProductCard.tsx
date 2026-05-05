@@ -17,7 +17,9 @@ export default function ProductCard({ id = 0, name, price, category }: ProductCa
   const { addToCart } = useCart();
 
   // 4. Creamos la acción del botón
-  const handleAddToCart = () => {
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     // Le enviamos los datos al contexto. Convertimos el ID a número y el precio a string por si acaso.
     addToCart({ 
       id: Number(id), 

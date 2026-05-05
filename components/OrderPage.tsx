@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 export default function ProductFilters() {
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState<string[]>([]);
 
-  const toggleFilter = (value) => {
+  const toggleFilter = (value: string) => {
     setSelected((prev) =>
       prev.includes(value)
         ? prev.filter((v) => v !== value)

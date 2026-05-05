@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import Link from "next/link";
 
 // 🔥 1. Tipos de TypeScript para evitar errores en rojo
 interface Product {
@@ -101,13 +102,14 @@ function ProductList({ selectedFilters = [], sortBy = "destacados", searchTerm =
     <section className="w-full mx-auto pb-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {processedProducts.map((p) => (
-          <ProductCard 
-            key={p.id} 
-            id={p.id}
-            name={p.name} 
-            price={p.price} 
-            category={p.category} 
-          />
+          <Link href={`/productos/${p.id}`} key={p.id}>
+            <ProductCard 
+              id={p.id}
+              name={p.name} 
+              price={p.price} 
+              category={p.category} 
+            />
+          </Link>
         ))}
       </div>
     </section>

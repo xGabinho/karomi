@@ -1,20 +1,11 @@
 "use client";
 import Navbar from "../components/Navbar";
 import ProductList from "../components/ProductList";
-import { Tangerine } from "next/font/google";
 import Image from "next/image";
 import { SiGmail } from "react-icons/si";
-import { MdEmail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { MoveRight } from 'lucide-react';
-
-
-const tangerine = Tangerine({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-tangerine"
-});
 
 export default function Home() {
   return (
@@ -87,7 +78,7 @@ export default function Home() {
 
           </div>
           <div className="container mx-auto px-4">
-            <ProductList />
+            <ProductList selectedFilters={[]} sortBy="destacados" searchTerm="" />
           </div>
 
           <a href="/productos" className="flex items-center justify-center px-6 py-3 rounded-full bg-[var(--color-primary)] text-white font-medium hover:scale-105 transition-transform">
