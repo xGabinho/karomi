@@ -16,7 +16,7 @@ interface ProductListProps {
   selectedFilters: string[];
   sortBy: string;      // Nuevo estado que viene de ProductosPage
   searchTerm: string;  // Nuevo estado que viene de ProductosPage
-}
+  }
 
 function ProductList({ selectedFilters = [], sortBy = "destacados", searchTerm = "" }: ProductListProps) {
   // 🔥 estados

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ShoppingBag, Menu, X, Trash2 } from 'lucide-react';
 import { useState, useCallback } from "react";
 import { useLenis } from "./SmoothScroll";
@@ -110,7 +111,7 @@ function Navbar() {
                     >
                         <ShoppingBag />
                         {totalItems > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                        <span className="absolute -top-2 -right-2 bg-[#FF7FB5] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                             {totalItems}
                         </span>
                         )}
@@ -210,9 +211,13 @@ function Navbar() {
                     </span>
                     </div>
                     
-                    <button className="w-full bg-[var(--color-primary)] text-white py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all">
+                    <Link 
+                        href="/checkout"
+                        onClick={() => setCartOpen(false)}
+                        className="w-full bg-[var(--color-primary)] text-white py-3 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all block text-center"
+                    >
                     Proceder al pago
-                    </button>
+                    </Link>
                 </div>
                 )}
 
